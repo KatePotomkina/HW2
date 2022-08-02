@@ -1,83 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Javascript: add edit delete LI</title>
+  <meta charset="windows-1252">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <!-- <script src="ToDo.js" type="text/javascript"></script> -->
-  <!-- <link href="ToDo.css" rel="stylesheet"> -->
+  <!-- //  <link href='https://css.gg/add.css' rel='stylesheet'> -->
+  <link rel="stylesheet" href="./ToDo.css" />
+  <style>
+    li {
+      cursor: pointer
+    }
+  </style>
 
 </head>
 
 <body>
+  <div class="todolist">
+    <input type="text" id="txt">
+    <div class="container">
 
-  <form name="form">
-    <fieldset>
-      <h1>Add new task</h1>
-      <table id="table" width="100%">
-        <tr>
-          <td width="120"><label for="task">Task</label></td>
-          <td><input type="text" name="task" id="task" required size="30" /></td>
-        </tr>
-        <tr>
-          <td width="120"><label for="date">Час</label></td>
-          <td><input type="time" name="date" id="date" size="30" /></td>
-        </tr>
-
-      </table>
-      <div>
-        <input type="submit" name="submit" class="btn" value="ADD" />
-      </div>
-      </td>
-      <table id="table">
-        <thead class="first">
-          <td>Task</td>
-          <td>Date</td>
-        </thead>
-        <tbody id="tablebody"></tbody>
-
-      </table>
-    </fieldset>
-  </form>
-
-  <script>
-    alert("hi!");
-    document.addEventListener('DOMContentLoaded', function () {
-
-      var data = [
-        ["Почистить зубки ", "07:00"],
-
-      ];
+      <button onclick="addLI()" class="gg-add"></button>
+      <button onclick="editLI()" class="gg-edit-markup"></button>
+      <button onclick="deleteLI()" class="gg-close-o"></button>
+    </div>
+  </div>
+  <div class="tasks">
+    <ul id="list">
+      <li>Wake up </li>
+    </ul>
+  </div>
 
 
-      function createHTML(data) {
-        return data.reduce(function (html, text) {
-          var tr = "<tr><td>" + text.join("<td>");
-          return html + tr;
-        }, "");
-      }
-      function createTable(data, tbody) {
-        var html = createHTML(data);
-        tbody.innerHTML = html
-      }
-      var tbody = document.querySelector("#tablebody");
-      createTable(data, tbody);
+  <div class="todolist">
+    <button  class="button-55" onclick="showImage() ">Generate Your Mood For Today</button>
 
-      document.form.addEventListener('submit', function (event) {
-        event.preventDefault();
-        var form = this;
-        var item = ["task", "date"].map(function (name) {
-          return form[name].value
-        });
-        form.reset();
-        data.push(item);
-        createTable(data, tbody);
-
-      })
-    })
-
+    
+  </div>
+  <section class="flex">
+    <img src="">
+  </section>
+  <script src=" ./ToDo.js">
   </script>
 </body>
 
